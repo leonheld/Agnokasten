@@ -8,10 +8,10 @@ namespace Agnokasten
         private readonly string _templateFilePath;
         private readonly string _destFilePath;
 
-        public Persistance(string zettRoot, string templateFileName, string destFileName)
+        public Persistance(string zettRoot, string templateFileName, string generatedZettTexSources, string destFileName)
         {
             _templateFilePath = Path.Combine(zettRoot, templateFileName);
-            _destFilePath = Path.Combine(zettRoot, destFileName);
+            _destFilePath = Path.Combine(zettRoot, generatedZettTexSources, destFileName);
         }
         public void WriteFile(TexTemplateGenerator template, string filename, bool overwrite = false)
         {

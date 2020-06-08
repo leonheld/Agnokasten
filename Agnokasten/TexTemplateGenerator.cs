@@ -9,8 +9,8 @@ namespace Agnokasten
 
         private string _zettRoot;
         private string _newZettName;
+        private const string _generatedZettTexSources = @"generatedZettTexSources";
         private string _templateFileName;
-        //worthless code that should be swaped for a proper cli parser l8r
         private List<string> _groups;
         public TexTemplateGenerator(string zettRoot, string templateFileName, string newZettName, List<string> groups)
         {
@@ -30,7 +30,7 @@ namespace Agnokasten
         public void GenerateNewZettFile()
         {
             var destFileName = thisTag.ToString() + "_" + _newZettName + ".tex";
-            persistance = new Persistance(_zettRoot, _templateFileName, destFileName);
+            persistance = new Persistance(_zettRoot, _templateFileName, _generatedZettTexSources, destFileName);
             persistance.CopyFile(GenerateAppendableTag());
         }
     }

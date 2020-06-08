@@ -2,27 +2,11 @@
 
 namespace Agnokasten
 {
-    public class Archive
-    {
-        private readonly List<Tag> _tagList = new List<Tag>(); //I bet choosing List is gonna bite my ass if this thing gets remotely bigger
-        public string 
-        public void AddTagToList(Tag tagToAdd)
-        {
-            _tagList.Add(tagToAdd);
-        }
-        
-        public void PrintAllTags()
-        {
-            foreach (var tag in _tagList)
-            {
-
-            }
-        }
-    }
     class Program
     {
         static void Main(string[] args)
         {
+        /*
             var newZettName = args[0];
             var groups = new List<string>();
             //this parsing is garbage. for the love of god, add an actual well written parser later like
@@ -33,8 +17,11 @@ namespace Agnokasten
             {
                 groups.Add(args[i]);
             }
+        */
+            string newZettName = "newZettName";
+            var groups = new List<string> {"group1", "group2"};
 
-            string zettRoot = @"c:\users\leon\documents";
+            string zettRoot = @"./metadata";
             string templateFileName = "template.tex";
 
             //too many parameters on this constructor, maybe use a builder or a fluent pattern like SO/40264
