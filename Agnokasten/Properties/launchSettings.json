@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Zettlekasten": {
+      "commandName": "Project",
+      "commandLineArgs": "myNewZett1 group1 group2 group3 group4"
+    }
+  }
+}
