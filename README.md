@@ -5,7 +5,8 @@ Basically Agnokasten generates and tracks LaTeX templates and documents to be us
 You don't have run in a certain app or text-editor, anywhere works as it is only CLI. Its written on .NET Core 3.1 in C#, making it multi-plataform.
 
 It has two main processes of organizing itself: Tags and Groups. Tags are unique identifiers of a file, consisting of the current datetime and a short name. Groups are abstract sets where many tags can belong to, like "Calculus", "Eletromagnetism", "Linear Algebra" or any specific topic. Tags can be cross-reference from inside other documents, and tags are organized via groups.
-#todo:
+
+# todo:
 
 1. Better CLI argument parsing
 2. Add more support for a environment-agnostic filesystem.
