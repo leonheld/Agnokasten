@@ -9,7 +9,7 @@ It has two main processes of organizing itself: Tags and Groups. Tags are unique
 # todo:
 
 1. Better CLI argument parsing
-2. Add more support for a environment-agnostic filesystem.
+2. ~~Add more support for a environment-agnostic filesystem.~~
 3. Add support for file tracking and text-based network visualization.
 4. Better group integration.
 
