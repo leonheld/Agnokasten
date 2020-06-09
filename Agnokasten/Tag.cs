@@ -5,7 +5,7 @@ namespace Agnokasten
     public class Tag
     {
         public DateTime tagDate;
-        static private string format = "yyyyMMdHHmm";
+        static private string format = "yyyyMMdHHmmss";
 
         public Tag()
         {

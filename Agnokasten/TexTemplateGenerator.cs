@@ -39,7 +39,8 @@ namespace Agnokasten
             thisArchive.AddTagToList(thisTag);
             var jsonToWrite = thisArchive.SerializeTagsToJson();
 
-            archivePersistance.WriteFile(jsonToWrite, jsonFilePath);
+            //dá pra usar o append() pra colocar o novo json no começo
+            archivePersistance.PrependText(jsonToWrite);
         }
 
         public void GenerateNewZettFile()
