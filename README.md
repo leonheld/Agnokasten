@@ -1,3 +1,5 @@
+![.NET Core](https://github.com/leonheld/Agnokasten/workflows/.NET%20Core/badge.svg)
+
 # Agnokasten
 Agnokasten tries to be an agnostic but LaTeX-based Zettelkasten type system for thought organization and note-taking, addressing the problem with common Zettelkasten clients that do not properly support complex math equations, making them unsuitable for scientific note-taking.
 
