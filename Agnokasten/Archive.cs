@@ -1,21 +1,19 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
+
 namespace Agnokasten
-{
+{    
     public class Archive
     {
-        private readonly List<Tag> _tagList = new List<Tag>(); //I bet choosing List is gonna bite my ass if this thing gets remotely bigger
+        private readonly List<Tag> _tagList = new List<Tag>(); //this list is gonna be reused for deserialize the JSON which will contain all the metadata about an existing Zettelkasten
         public void AddTagToList(Tag tagToAdd)
         {
             _tagList.Add(tagToAdd);
         }
         
-        public void PrintAllTags()
+        public string SerializeTagsToJson()
         {
-            foreach (var tag in _tagList)
-            {
-
-            }
+            return JsonConvert.SerializeObject(_tagList, Formatting.Indented);
         }
     }
 }

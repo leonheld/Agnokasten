@@ -13,10 +13,17 @@ namespace Agnokasten
             _templateFilePath = Path.Combine(zettRoot, templateFileName);
             _destFilePath = Path.Combine(zettRoot, generatedZettTexSources, destFileName);
         }
-        public void WriteFile(TexTemplateGenerator template, string filename, bool overwrite = false)
+
+        public Persistance(string destFileName)
+        {
+            _destFilePath = destFileName;
+        }
+
+        //should be able to receive ANYTHING and call .ToString on it
+        public void WriteFile(object obj, string filename, bool overwrite = false)
         {
             if (overwrite || !File.Exists(filename))
-                File.WriteAllText(filename, template.ToString());
+                File.WriteAllText(filename, obj.ToString());
         }
 
         public void PrependText(string prependant)

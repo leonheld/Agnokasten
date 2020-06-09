@@ -5,7 +5,12 @@ namespace Agnokasten
     public class TexTemplateGenerator
     {
         public Tag thisTag = new Tag();
-        public Persistance persistance;
+        
+        private Archive thisArchive = new Archive();
+        private Persistance newZettPersistance;
+        private Persistance archivePersistance;
+
+        private string jsonFilePath = @"./metadata/json";
 
         private string _zettRoot;
         private string _newZettName;
@@ -27,11 +32,23 @@ namespace Agnokasten
             return tagToPrepend + "{" + thisTag.ToString() + "_" + _newZettName + "}";
         }
 
+        public void ArchiveGeneratedTag()
+        {
+            archivePersistance = new Persistance(jsonFilePath);
+            
+            thisArchive.AddTagToList(thisTag);
+            var jsonToWrite = thisArchive.SerializeTagsToJson();
+
+            archivePersistance.WriteFile(jsonToWrite, jsonFilePath);
+        }
+
         public void GenerateNewZettFile()
         {
             var destFileName = thisTag.ToString() + "_" + _newZettName + ".tex";
-            persistance = new Persistance(_zettRoot, _templateFileName, _generatedZettTexSources, destFileName);
-            persistance.CopyFile(GenerateAppendableTag());
+            newZettPersistance = new Persistance(_zettRoot, _templateFileName, _generatedZettTexSources, destFileName);
+            newZettPersistance.CopyFile(GenerateAppendableTag());
+
+            ArchiveGeneratedTag();
         }
     }
 }
