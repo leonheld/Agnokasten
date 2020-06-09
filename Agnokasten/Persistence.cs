@@ -3,18 +3,18 @@
 namespace Agnokasten
 {
     //All of IO goes here
-    public class Persistance
+    public class Persistence
     {
         private readonly string _templateFilePath;
         private readonly string _destFilePath;
 
-        public Persistance(string zettRoot, string templateFileName, string generatedZettTexSources, string destFileName)
+        public Persistence(string zettRoot, string templateFileName, string generatedZettTexSources, string destFileName)
         {
             _templateFilePath = Path.Combine(zettRoot, templateFileName);
             _destFilePath = Path.Combine(zettRoot, generatedZettTexSources, destFileName);
         }
 
-        public Persistance(string destFileName)
+        public Persistence(string destFileName)
         {
             _destFilePath = destFileName;
         }

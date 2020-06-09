@@ -7,8 +7,8 @@ namespace Agnokasten
         public Tag thisTag = new Tag();
         
         private Archive thisArchive = new Archive();
-        private Persistance newZettPersistance;
-        private Persistance archivePersistance;
+        private Persistence newZettPersistence;
+        private Persistence archivePersistence;
 
         private string jsonFilePath = @"./metadata/json";
 
@@ -34,20 +34,20 @@ namespace Agnokasten
 
         public void ArchiveGeneratedTag()
         {
-            archivePersistance = new Persistance(jsonFilePath);
+            archivePersistence = new Persistence(jsonFilePath);
             
             thisArchive.AddTagToList(thisTag);
             var jsonToWrite = thisArchive.SerializeTagsToJson();
 
             //dá pra usar o append() pra colocar o novo json no começo
-            archivePersistance.PrependText(jsonToWrite);
+            archivePersistence.PrependText(jsonToWrite);
         }
 
         public void GenerateNewZettFile()
         {
             var destFileName = thisTag.ToString() + "_" + _newZettName + ".tex";
-            newZettPersistance = new Persistance(_zettRoot, _templateFileName, _generatedZettTexSources, destFileName);
-            newZettPersistance.CopyFile(GenerateAppendableTag());
+            newZettPersistence = new Persistence(_zettRoot, _templateFileName, _generatedZettTexSources, destFileName);
+            newZettPersistence.CopyFile(GenerateAppendableTag());
 
             ArchiveGeneratedTag();
         }
