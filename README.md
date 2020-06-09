@@ -12,5 +12,5 @@ It has two main processes of organizing itself: Tags and Groups. Tags are unique
 2. ~~Add more support for a environment-agnostic filesystem.~~
 3. Add support for file tracking and text-based network visualization.
 4. Better group integration.
-5. Add a json file to hold all metadata information about zetts already created.
-6. Make the IO system a little bit more generic
+5. ~~Add a json file to hold all metadata information about zetts already created.~~
+6. ~~Make the IO system a little bit more generic~~ somewhat, still needs a little bit of work. Maybe cook some nice interface or something.
